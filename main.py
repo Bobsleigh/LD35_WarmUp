@@ -15,9 +15,6 @@ if __name__ == '__main__':
         pygame.init()
         pygame.font.init()
 
-    #Blabla bobo
-    #PIPICACA
-
         # Écran
         screenSize = (SCREEN_WIDTH, SCREEN_HEIGHT)
         screen = pygame.display.set_mode(screenSize)
