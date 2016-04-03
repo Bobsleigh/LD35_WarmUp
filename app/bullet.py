@@ -2,6 +2,7 @@ import os
 
 from app.enemy.enemy import Enemy
 from app.logic.collision.collisionPlayer import *
+from app.tools.animation import Animation
 
 class Bullet(Enemy):
     def __init__(self, x, y, direction=RIGHT, friendly=True):
@@ -20,6 +21,8 @@ class Bullet(Enemy):
         self.imageBulletLeft.append(pygame.image.load(os.path.join('img', 'bullet_v5.png')))
         self.imageBulletLeft.append(self.imageBulletLeft[0])
         self.imageBulletLeft.append(pygame.image.load(os.path.join('img', 'bullet_v6.png')))
+
+        self.animation = Animation({RIGHT: self.imageBulletRight, LEFT: self.imageBulletLeft})
 
         self.image = self.imageBulletRight[0]
         self.rect = self.image.get_rect()

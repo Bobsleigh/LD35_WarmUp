@@ -12,6 +12,7 @@ class EventHandlerGame(EventHandlerGen):
         self.endState = None
         self.player = player
         self.gameData = gameData
+        self.menuPause = None
 
     def handle(self):
         for event in pygame.event.get():
@@ -25,6 +26,10 @@ class EventHandlerGame(EventHandlerGen):
                     self.gameData.camera.add(bullet)
                     self.gameData.allSprites.add(bullet)
                     self.gameData.friendlyBullet.add(bullet)
+                if event.key == pygame.K_BACKSPACE:
+                    self.menuPause.mainLoop()
+                if event.key == pygame.K_ESCAPE:
+                    self.menuPause.mainLoop()
 
             if event.type == pygame.KEYUP:
                 self.eventHandlerPlayer.handleKeyup(event.key)
