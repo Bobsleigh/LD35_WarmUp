@@ -2,6 +2,8 @@ from app.drawing.drawerGame import DrawerGame
 from app.logic.logicHandler import LogicHandler
 from app.event.eventHandlerFactory import EventHandlerFactory
 
+from menu.Menu import Menu
+
 from app.player import Player
 from app.map.gamedata import GameData
 from app.settings import *
@@ -27,6 +29,12 @@ class Game():
         self.gameData.camera.add(self.player)
         self.camera = self.gameData.camera
 
+        #Menu
+        self.menuPause = Menu(self.screen, pygame.Rect(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, SCREEN_WIDTH / 3, SCREEN_HEIGHT / 4))
+        self.menuPause.addOption('Resume',self.menuPause.close)
+        self.menuPause.addOption('Back to Main Menu', self.backToMain)
+
+
         # Handler
         self.eventHandlerFactory = EventHandlerFactory()
         self.eventHandlerFactory.setPlayer(self.player)
@@ -37,8 +45,8 @@ class Game():
         self.endState = None
 
     def mainLoop(self):
-        sceneRunning = True
-        while sceneRunning:
+        self.sceneRunning = True
+        while self.sceneRunning:
             self.eventHandlerGame.handle()
             sceneRunning = self.eventHandlerGame.sceneRunning and self.logicHandler.sceneRunning
 
@@ -63,3 +71,10 @@ class Game():
             self.mapMemory.updateMap(self.gameData)
             self.eventHandlerGame.newMap(self.gameData)
             self.logicHandler.newMap = None
+
+    def close(self):
+        self.scenerunning = False
+
+    def backToMain(self):
+        self.menuPause.close()
+        self.close()
