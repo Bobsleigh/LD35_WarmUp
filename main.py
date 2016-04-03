@@ -15,7 +15,7 @@ if __name__ == '__main__':
         pygame.init()
         pygame.font.init()
 
-    #Blabla test 2
+    #Blabla test 3
 
         # Écran
         screenSize = (SCREEN_WIDTH, SCREEN_HEIGHT)
