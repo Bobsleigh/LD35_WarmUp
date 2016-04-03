@@ -30,7 +30,7 @@ class Game():
         self.camera = self.gameData.camera
 
         #Menu
-        self.menuPause = Menu(self.screen, pygame.Rect(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, SCREEN_WIDTH / 3, SCREEN_HEIGHT / 4))
+        self.menuPause = Menu(self.screen, pygame.Rect(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 4))
         self.menuPause.addOption('Resume',self.menuPause.close)
         self.menuPause.addOption('Back to Main Menu', self.backToMain)
 
@@ -39,6 +39,8 @@ class Game():
         self.eventHandlerFactory = EventHandlerFactory()
         self.eventHandlerFactory.setPlayer(self.player)
         self.eventHandlerGame = self.eventHandlerFactory.create(self.screenType, self.camera, self.gameData)
+        self.eventHandlerGame.menuPause = self.menuPause
+
         self.logicHandler = LogicHandler()
         self.drawer = DrawerGame()
 
