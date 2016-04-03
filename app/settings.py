@@ -52,3 +52,6 @@ RIGHT = 3
 #End States of Game
 GAME_OVER = 1
 WIN = 2
+
+# Development mode, DEV or OPT
+DEV_MODE = 'DEV'

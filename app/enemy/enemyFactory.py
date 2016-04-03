@@ -1,23 +1,26 @@
 from app.enemy.enemy_noob import Enemy_noob
 from app.enemy.enemyFlyingCircle import EnemyFlyingCircle
 from app.enemy.enemyShooter import EnemyShooter
+from app.tools.functionTools import *
+
 
 class EnemyFactory:
     def __init__(self):
         pass
 
     def create(self, enemy, theMap=None):
-        if enemy.name == "enemy_noob":
+        eName = seekAtt(enemy, "name")
+        if eName == "enemy_noob":
             return self.createEnemyNoob(enemy)
-        if enemy.name == "enemyFlyingCircle":
+        if eName == "enemyFlyingCircle":
             return self.createEnemyFlyingCircle(enemy)
-        if enemy.name == "enemyShooter":
+        if eName == "enemyShooter":
             return self.createEnemyShooter(enemy, theMap)
 
 
     def createEnemyNoob(self, enemy):
-        direction = self.seekAtt(enemy, "direction")
-        distanceMax = self.seekAtt(enemy, "distanceMax")
+        direction = seekAtt(enemy, "direction")
+        distanceMax = seekAtt(enemy, "distanceMax")
 
         enemyCreated = Enemy_noob(enemy.x, enemy.y)
 
@@ -28,7 +31,7 @@ class EnemyFactory:
         return enemyCreated
 
     def createEnemyShooter(self, enemy, theMap):
-        direction = self.seekAtt(enemy, "direction")
+        direction = seekAtt(enemy, "direction")
         if direction is None:
             return EnemyShooter(enemy.x, enemy.y, theMap)
         else:
@@ -36,8 +39,8 @@ class EnemyFactory:
 
     def createEnemyFlyingCircle(self, enemy):
 
-        radius = self.seekAtt(enemy, "radius")
-        angleDir = self.seekAtt(enemy, "angleDirection")
+        radius = seekAtt(enemy, "radius")
+        angleDir = seekAtt(enemy, "angleDirection")
 
         enemyCreated = EnemyFlyingCircle(enemy.x, enemy.y)
 
@@ -47,10 +50,3 @@ class EnemyFactory:
             enemyCreated.setAngleDirection(int(angleDir))
         return enemyCreated
 
-
-
-    def seekAtt(self, object, nameAtt):
-        try:
-            return getattr(object, nameAtt)
-        except AttributeError:
-            return None
