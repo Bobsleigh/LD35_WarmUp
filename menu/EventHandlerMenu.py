@@ -1,4 +1,4 @@
-from pygame import event,QUIT,KEYDOWN,K_ESCAPE,K_RIGHT,K_LEFT,K_UP,K_DOWN,K_SPACE,K_RETURN,KEYUP
+from pygame import event,QUIT,KEYDOWN,K_ESCAPE,K_RIGHT,K_LEFT,K_UP,K_DOWN,K_SPACE,K_RETURN,K_BACKSPACE,KEYUP
 
 from app.settings import *
 
@@ -33,3 +33,6 @@ class EventHandlerMenu():
                     self.optionList[self.selector.vPos].doOption()
                 elif dummyEv.key == K_RETURN:
                     self.optionList[self.selector.vPos].doOption()
+                elif dummyEv.key == K_BACKSPACE or K_ESCAPE:
+                    self.optionList[0].doOption()
+
