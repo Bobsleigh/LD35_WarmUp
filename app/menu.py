@@ -9,6 +9,7 @@ class Menu(ScreenGen):
     def __init__(self, screen):
         super().__init__(screen)
 
+
         # Trucs dans le screen
         self.monFont = pygame.font.SysFont('comicsansms', 36)
         self.surface1 = self.monFont.render("PRESS SPACE TO BEGIN", False, RED)
