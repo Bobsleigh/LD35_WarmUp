@@ -13,9 +13,7 @@ class EventHandlerMenu():
             if dummyEv.type == QUIT:
                 quit()
             elif dummyEv.type == KEYDOWN:
-                if dummyEv.key == K_ESCAPE:
-                    quit()
-                elif dummyEv.key == K_RIGHT:
+                if dummyEv.key == K_RIGHT:
                     self.optionList[self.selector.vPos].deselect()
                     self.selector.moveRight()
                     self.optionList[self.selector.vPos].select()

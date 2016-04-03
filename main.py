@@ -38,10 +38,8 @@ if __name__ == '__main__':
         menu.addOption('Exit', quit)
 
         menu.mainLoop()
-        i=1
 
         game.mainLoop()
-
 
         if game.endState == GAME_OVER:
             gameOverScene = GameOverScene(screen)

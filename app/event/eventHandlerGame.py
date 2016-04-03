@@ -28,6 +28,8 @@ class EventHandlerGame(EventHandlerGen):
                     self.gameData.friendlyBullet.add(bullet)
                 if event.key == pygame.K_BACKSPACE:
                     self.menuPause.mainLoop()
+                if event.key == pygame.K_ESCAPE:
+                    self.menuPause.mainLoop()
 
             if event.type == pygame.KEYUP:
                 self.eventHandlerPlayer.handleKeyup(event.key)

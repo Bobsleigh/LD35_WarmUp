@@ -29,28 +29,31 @@ class Game():
         self.gameData.camera.add(self.player)
         self.camera = self.gameData.camera
 
-        #Menu
-        self.menuPause = Menu(self.screen, pygame.Rect(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 4))
-        self.menuPause.addOption('Resume',self.menuPause.close)
-        self.menuPause.addOption('Back to Main Menu', self.backToMain)
 
 
         # Handler
         self.eventHandlerFactory = EventHandlerFactory()
         self.eventHandlerFactory.setPlayer(self.player)
         self.eventHandlerGame = self.eventHandlerFactory.create(self.screenType, self.camera, self.gameData)
-        self.eventHandlerGame.menuPause = self.menuPause
 
         self.logicHandler = LogicHandler()
         self.drawer = DrawerGame()
 
         self.endState = None
 
+        #Menu
+        self.menuPause = Menu(self.screen, pygame.Rect(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3.5))
+        self.menuPause.addOption('Resume',self.menuPause.close)
+        self.menuPause.addOption('Back to Main Menu', self.backToMain)
+        self.menuPause.addOption('Exit', self.eventHandlerGame.handleQuit)
+        self.eventHandlerGame.menuPause = self.menuPause
+
+
     def mainLoop(self):
         self.sceneRunning = True
         while self.sceneRunning:
             self.eventHandlerGame.handle()
-            sceneRunning = self.eventHandlerGame.sceneRunning and self.logicHandler.sceneRunning
+            self.sceneRunning = self.eventHandlerGame.sceneRunning and self.logicHandler.sceneRunning
 
             self.logicHandler.handle(self.player, self.gameData, self.mapMemory)
             self.checkNewMap(self.logicHandler.newMap)
@@ -58,6 +61,7 @@ class Game():
             self.drawer.draw(self.screen, self.gameData.camera, self.gameData.spritesHUD, self.player)
 
         self.endState = self.logicHandler.endState
+
 
     def checkNewMap(self, newMap):
         if newMap is not None:
@@ -75,7 +79,7 @@ class Game():
             self.logicHandler.newMap = None
 
     def close(self):
-        self.scenerunning = False
+        self.eventHandlerGame.sceneRunning = False
 
     def backToMain(self):
         self.menuPause.close()
