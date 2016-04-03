@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="18" tilewidth="32" tileheight="32" nextobjectid="4">
+ <tileset firstgid="1" name="Set_1" tilewidth="32" tileheight="32" tilecount="25">
+  <image source="img/Set_01.png" width="160" height="160"/>
+ </tileset>
+ <tileset firstgid="26" name="Set_2" tilewidth="32" tileheight="32" tilecount="25">
+  <image source="img/Set_02.png" width="160" height="160"/>
+ </tileset>
+ <layer name="Collision_Layer" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgYBzFgw7jAwNpN63dQQkYSLvJdQ89wUDbPwpGwShABQNdz4x0DAB5+wES
+  </data>
+ </layer>
+ <layer name="Background" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJzjZmBg4B7Fo3gUj+JRPIpH8SgeQRgAoQEYwQ==
+  </data>
+ </layer>
+ <layer name="Terrain" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJxjY2BgYKMyFicB08seatlPDTuJsR8foLX9xAJa2E8JoNR+agNi7KcnGGj7hzKQpoMYPiBGB7FR++lvP73qGXLrv4G2n9buAgCp9hSJ
+  </data>
+ </layer>
+ <layer name="Sprite_Layer" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAfBkJAAAB
+  </data>
+ </layer>
+ <objectgroup name="outZoneLayer">
+  <object id="1" name="out_zone_1" type="out_zone" x="3" y="222" width="61" height="257"/>
+  <object id="2" name="out_zone_2" type="out_zone" x="958" y="254" width="64" height="225"/>
+ </objectgroup>
+ <objectgroup name="enemyLayer_01"/>
+ <objectgroup name="powerUpLayer_01">
+  <object id="3" name="powerUp_Health" type="powerUp" x="545" y="417" width="30" height="31"/>
+ </objectgroup>
+</map>

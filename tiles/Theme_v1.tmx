@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="18" tilewidth="32" tileheight="32" nextobjectid="30">
+ <tileset firstgid="1" name="Set_1" tilewidth="32" tileheight="32" tilecount="25">
+  <image source="img/Set_01.png" width="160" height="160"/>
+ </tileset>
+ <tileset firstgid="26" name="Set_2" tilewidth="32" tileheight="32" tilecount="25">
+  <image source="img/Set_02.png" width="160" height="160"/>
+ </tileset>
+ <layer name="Collision_Layer" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJxjZMAEjFjEaAWw2TVS7WdEwgNhPz6xUftH7aeX/fQElNpPaX6lVC+lZQY19ZFjFr3djc0cYvFA2z+KqY8BIqMAjw==
+  </data>
+ </layer>
+ <layer name="Background" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJzjZmBg4MaCWeiEsdk9av+o/aP2j9o/FOzngeKBsJ8HDdPTfnS7yXXDqP1D035qYVz20wsDANBEDZs=
+  </data>
+ </layer>
+ <layer name="Terrain" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJxjY8AEbFjEaAWw2TVS7WeE4pHq/1H7R+2nN6DUfnYoHgj72dEwPe3HZh85bsBmvxQBPj675Mmwn5FITIz9KjjEcfmJjQSM7Bb0uIdhYv2CXNeMZAwAFoUDiQ==
+  </data>
+ </layer>
+ <layer name="Sprite_Layer" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAfBkJAAAB
+  </data>
+ </layer>
+ <objectgroup name="outZoneLayer">
+  <object id="8" name="out_zone_2" type="out_zone" x="33" y="1" width="126" height="59"/>
+  <object id="9" name="out_zone_1" type="out_zone" x="959" y="0" width="64" height="478"/>
+  <object id="21" name="out_zone_3" type="out_zone" x="193" y="2" width="765" height="61"/>
+  <object id="29" name="finish_zone" type="finish_zone" x="488" y="385" width="152" height="91"/>
+ </objectgroup>
+ <objectgroup name="enemyLayer_01">
+  <object id="14" name="enemy_noob" type="enemy" x="225" y="413" width="30" height="31">
+   <properties>
+    <property name="direction" value="Left"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="powerUpLayer_01">
+  <object id="19" name="powerUp_Health" type="powerUp" x="480.5" y="448.5" width="29" height="31"/>
+ </objectgroup>
+</map>

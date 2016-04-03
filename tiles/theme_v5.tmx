@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="18" tilewidth="32" tileheight="32" nextobjectid="15">
+ <tileset firstgid="1" name="Set_1" tilewidth="32" tileheight="32" tilecount="25">
+  <image source="img/Set_01.png" width="160" height="160"/>
+ </tileset>
+ <tileset firstgid="26" name="Set_2" tilewidth="32" tileheight="32" tilecount="25">
+  <image source="img/Set_02.png" width="160" height="160"/>
+ </tileset>
+ <layer name="Collision_Layer" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgYBzFcExrMJB2D2b76QXoaT82c+kV/rjMpEf6x2cerfMgIbNoWQ6Qas5Al2ej9tMXj9o/+OwHACT3AUw=
+  </data>
+ </layer>
+ <layer name="Background" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJzjZmBg4B7Fo3gUD1osRqL4qP3Dy/5RPIpHMW0wADKfGRk=
+  </data>
+ </layer>
+ <layer name="Terrain" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJxjY2BgYBvFcExrMJB2D2b76QXIsV+aRHEYYCTBfmxqKQGMDNj9hS/+qeUGmN2k2k8NNyDbTY79lLgB3W5C6QqfG8TJwKSma0LhQKndlNpPrBvILdOoXXfgSkswPBD2U5oXhrv9AEwLCe4=
+  </data>
+ </layer>
+ <layer name="Sprite_Layer" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAfBkJAAAB
+  </data>
+ </layer>
+ <objectgroup name="outZoneLayer">
+  <object id="12" name="out_zone_1" type="out_zone" x="863" y="512" width="127" height="62"/>
+ </objectgroup>
+ <objectgroup name="enemyLayer_01">
+  <object id="1" name="enemyShooter" type="enemy" x="68" y="190" width="28" height="32"/>
+  <object id="2" name="enemyShooter" type="enemy" x="100" y="222" width="28" height="32"/>
+  <object id="3" name="enemyShooter" type="enemy" x="163" y="284" width="28" height="32"/>
+  <object id="4" name="enemyShooter" type="enemy" x="133" y="251" width="28" height="32"/>
+  <object id="5" name="enemyShooter" type="enemy" x="703" y="190" width="28" height="32">
+   <properties>
+    <property name="direction" value="Left"/>
+   </properties>
+  </object>
+  <object id="9" name="enemyShooter" type="enemy" x="673" y="222" width="28" height="32">
+   <properties>
+    <property name="direction" value="Left"/>
+   </properties>
+  </object>
+  <object id="10" name="enemyShooter" type="enemy" x="639" y="253" width="28" height="32">
+   <properties>
+    <property name="direction" value="Left"/>
+   </properties>
+  </object>
+  <object id="11" name="enemyShooter" type="enemy" x="608" y="285" width="28" height="32">
+   <properties>
+    <property name="direction" value="Left"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="powerUpLayer_01">
+  <object id="13" name="powerUp_HealthMax" type="powerUp" x="384" y="193" width="31" height="32"/>
+ </objectgroup>
+</map>
