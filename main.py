@@ -11,7 +11,6 @@ from app.winScene import WinScene
 def startGame():
     menu.close()
     game.mainLoop()
-    i = 2
 
 if __name__ == '__main__':
     running = True
@@ -35,10 +34,13 @@ if __name__ == '__main__':
         titleMenu = pygame.image.load(os.path.join('img', 'titlescreen.png'))
         screen.blit(titleMenu, (0,0))
         menu = Menu(screen, pygame.Rect(SCREEN_WIDTH / 2, SCREEN_HEIGHT * 13 / 16, SCREEN_WIDTH / 3, SCREEN_HEIGHT * 0.25))
-        menu.addOption('Start', startGame)
+        menu.addOption('Start', menu.close)
         menu.addOption('Exit', quit)
 
         menu.mainLoop()
+        i=1
+
+        game.mainLoop()
 
 
         if game.endState == GAME_OVER:
