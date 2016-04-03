@@ -22,33 +22,29 @@ class Bullet(Enemy):
         self.imageBulletLeft.append(self.imageBulletLeft[0])
         self.imageBulletLeft.append(pygame.image.load(os.path.join('img', 'bullet_v6.png')))
 
-        self.animation = Animation({RIGHT: self.imageBulletRight, LEFT: self.imageBulletLeft})
-
         self.image = self.imageBulletRight[0]
+
+        self.direction = direction
+
         self.rect = self.image.get_rect()
         self.rect.y = y - self.rect.height/2
 
         if direction == RIGHT:
             self.speedx = 10
+            self.image = self.imageBulletRight[0]
             self.imageBulletList = self.imageBulletRight
             self.rect.x = x
         elif direction == LEFT:
             self.speedx = -10
+            self.image = self.imageBulletLeft[0]
             self.imageBulletList = self.imageBulletLeft
             self.rect.x = x - self.rect.width
         self.speedy = 0
 
-        self.imageIterState = 0
-        self.imageWaitNextImage = 1
-        self.imageIterWait = 0
+        self.animation = Animation(self.image, {RIGHT: self.imageBulletRight, LEFT: self.imageBulletLeft})
 
         self.friendly = friendly
 
     def update(self):
         self.rect.x += self.speedx
-
-        self.imageIterWait += 1
-        if self.imageIterWait >= self.imageWaitNextImage:
-            self.imageIterState = (self.imageIterState+1) % len(self.imageBulletList)
-            self.image = self.imageBulletList[self.imageIterState]
-            self.imageIterWait = 0
+        self.animation.update(self)

@@ -25,7 +25,7 @@ class Menu():
         self.menuRunning = True
         while self.menuRunning:
             self.draw()
-            self.eventHandler.eventHandle(self.optionList, self.selector)
+            self.eventHandler.eventHandle(self.optionList, self.selector,self.close)
 
     def draw(self):
 
