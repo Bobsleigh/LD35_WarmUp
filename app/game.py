@@ -7,7 +7,7 @@ from menu.Menu import Menu
 
 from app.settings import *
 from app.player import Player
-from app.map.gamedata import MapData
+from app.map.mapData import MapData
 from app.map.gameMemory import GameMemory
 
 
@@ -24,6 +24,11 @@ class Game:
 
         # TODO: See where to put player. In mapData? But he will reset with each map change..?
         self.player = Player(540, 445)
+
+        # For debugging
+        if MODE == DEV_MODE:
+            self.player.lifeMax = 4
+            self.player.life = 4
 
         self.mapData.allSprites.add(self.player)
         self.mapData.camera.add(self.player)
