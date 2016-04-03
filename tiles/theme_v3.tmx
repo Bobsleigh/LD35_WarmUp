@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="18" tilewidth="32" tileheight="32" nextobjectid="32">
+ <tileset firstgid="1" name="Set_1" tilewidth="32" tileheight="32" tilecount="25">
+  <image source="img/Set_01.png" width="160" height="160"/>
+ </tileset>
+ <tileset firstgid="26" name="Set_2" tilewidth="32" tileheight="32" tilecount="25">
+  <image source="img/Set_02.png" width="160" height="160"/>
+ </tileset>
+ <layer name="Collision_Layer" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAfBkJAAAB
+  </data>
+ </layer>
+ <layer name="Background" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJxjYWBgYBnFo3gUj+JRPIpH8SgeQRgAnVgJAQ==
+  </data>
+ </layer>
+ <layer name="Terrain" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAfBkJAAAB
+  </data>
+ </layer>
+ <layer name="Sprite_Layer" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAfBkJAAAB
+  </data>
+ </layer>
+ <objectgroup name="outZoneLayer">
+  <object id="13" name="out_zone_1" type="out_zone" x="1" y="514" width="1022" height="61"/>
+  <object id="29" name="out_zone_1" type="out_zone" x="0" y="2" width="64" height="511"/>
+  <object id="30" name="out_zone_1" type="out_zone" x="67" y="3" width="891" height="61"/>
+  <object id="31" name="out_zone_1" type="out_zone" x="961" y="5" width="62" height="504"/>
+ </objectgroup>
+ <objectgroup name="enemyLayer_01">
+  <object id="15" name="enemyFlyingCircle" type="enemy" x="249" y="116" width="32" height="32"/>
+  <object id="16" name="enemyFlyingCircle" type="enemy" x="685" y="137" width="32" height="32"/>
+  <object id="17" name="enemyFlyingCircle" type="enemy" x="474" y="199" width="32" height="32"/>
+  <object id="18" name="enemyFlyingCircle" type="enemy" x="219" y="231" width="32" height="32"/>
+  <object id="19" name="enemyFlyingCircle" type="enemy" x="375" y="134" width="32" height="32"/>
+  <object id="20" name="enemyFlyingCircle" type="enemy" x="373" y="253" width="32" height="32"/>
+  <object id="21" name="enemyFlyingCircle" type="enemy" x="556" y="112" width="32" height="32"/>
+  <object id="22" name="enemyFlyingCircle" type="enemy" x="609" y="248" width="32" height="32"/>
+  <object id="23" name="enemyFlyingCircle" type="enemy" x="751" y="226" width="32" height="32"/>
+  <object id="24" name="enemyFlyingCircle" type="enemy" x="836" y="132" width="32" height="32"/>
+  <object id="25" name="enemyFlyingCircle" type="enemy" x="840" y="304" width="32" height="32"/>
+  <object id="26" name="enemyFlyingCircle" type="enemy" x="132" y="158" width="32" height="32"/>
+  <object id="27" name="enemyFlyingCircle" type="enemy" x="135" y="304" width="32" height="32"/>
+ </objectgroup>
+ <objectgroup name="powerUpLater_01"/>
+</map>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="24" tilewidth="32" tileheight="32" nextobjectid="14">
+ <tileset firstgid="1" name="Set_1" tilewidth="32" tileheight="32" tilecount="25">
+  <image source="img/Set_01.png" width="160" height="160"/>
+ </tileset>
+ <tileset firstgid="26" name="Set_2" tilewidth="32" tileheight="32" tilecount="25">
+  <image source="img/Set_02.png" width="160" height="160"/>
+ </tileset>
+ <layer name="Collision_Layer" width="32" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztlMEKACAMQtet///irhERLjUKEnaLvXK2EhHl15VVh1IK4Tul5qOejud77XrN3JcV65eKPfPWmTFVXlTsU3x2pzB85X7I9lDvp0wP1EtmHln2ife7/i7CZ3PO5F/91hUDYd/Ed83FmbWVXuG7qgEXLQGh
+  </data>
+ </layer>
+ <layer name="Background" width="32" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztzaEBAAAIA6AF2/7/1+oPEsg0SeGpOfx+v9/v9/PBApmdH8Y=
+  </data>
+ </layer>
+ <layer name="Terrain" width="32" height="24">
+  <data encoding="base64" compression="zlib">
+   eJzt1rEKwCAMBNC4ZCs4+/8f2qkgh2lijKlDA7c4+FRukImI/xyZCxI5Fn/nRPvVGPT78b51dZw36o0f+wu/txnWtaz6aGfef2Rn+ZLNtN5/bQr574szuwfamf7Inu27t/+SnXH/N3u3r9nWvs/2vwl29Ej7al3b4bfBemTX3/pfINl/Ecs/5AQ/6t0xNy/wDKw=
+  </data>
+ </layer>
+ <layer name="Sprite_Layer" width="32" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAAC8GDAAAAQ==
+  </data>
+ </layer>
+ <objectgroup name="outZoneLayer">
+  <object id="1" name="out_zone_1" type="out_zone" x="0" y="189.333" width="62.6667" height="480"/>
+  <object id="2" name="enemy_noob" type="enemy" x="766.667" y="221.333" width="28" height="28">
+   <properties>
+    <property name="distanceMax" value="100"/>
+   </properties>
+  </object>
+  <object id="5" name="enemy_noob" type="enemy" x="735.333" y="319.333" width="28" height="28">
+   <properties>
+    <property name="direction" value="Left"/>
+    <property name="distanceMax" value="110"/>
+   </properties>
+  </object>
+  <object id="6" name="enemy_noob" type="enemy" x="760.667" y="415.333" width="28" height="28"/>
+  <object id="7" name="enemy_noob" type="enemy" x="608.667" y="512.667" width="28" height="28">
+   <properties>
+    <property name="direction" value="Left"/>
+   </properties>
+  </object>
+  <object id="8" name="enemy_noob" type="enemy" x="572.667" y="607.333" width="28" height="28"/>
+  <object id="9" name="enemy_noob" type="enemy" x="794" y="604.667" width="28" height="28"/>
+  <object id="10" name="enemy_noob" type="enemy" x="440.667" y="704.667" width="28" height="28"/>
+  <object id="11" name="enemy_noob" type="enemy" x="614" y="704.667" width="28" height="28">
+   <properties>
+    <property name="direction" value="Left"/>
+   </properties>
+  </object>
+  <object id="12" name="out_zone_2" type="out_zone" x="961.333" y="672" width="60" height="62.6667"/>
+ </objectgroup>
+ <objectgroup name="enemyLayer_01"/>
+ <objectgroup name="powerUpLayer_01"/>
+</map>

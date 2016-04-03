@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="18" tilewidth="32" tileheight="32" nextobjectid="12">
+ <tileset firstgid="1" name="Set_1" tilewidth="32" tileheight="32" tilecount="25">
+  <image source="img/Set_01.png" width="160" height="160"/>
+ </tileset>
+ <tileset firstgid="26" name="Set_2" tilewidth="32" tileheight="32" tilecount="25">
+  <image source="img/Set_02.png" width="160" height="160"/>
+ </tileset>
+ <layer name="Collision_Layer" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGAQwwEsCkqqdUH63MGen2AwBn9ABn
+  </data>
+ </layer>
+ <layer name="Background" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJxjYWBgYBnFo3gUj+JRPIpHMVGYGw2P2j807QcADkcJcQ==
+  </data>
+ </layer>
+ <layer name="Terrain" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMAoGN5CiUA8x+mFqGAlgdEBIPan62AhgdEBIPQyTag+17acWppb9AEHuAkE=
+  </data>
+ </layer>
+ <layer name="Sprite_Layer" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAfBkJAAAB
+  </data>
+ </layer>
+ <objectgroup name="outZoneLayer">
+  <object id="1" name="out_zone_1" type="out_zone" x="0" y="0" width="62" height="478"/>
+  <object id="2" name="out_zone_2" type="out_zone" x="960" y="0" width="63" height="478"/>
+  <object id="3" name="out_zone_3" type="out_zone" x="448" y="512" width="128" height="63"/>
+  <object id="5" name="out_zone_4" type="out_zone" x="63" y="3" width="896" height="62"/>
+ </objectgroup>
+ <objectgroup name="enemyLayer_01">
+  <object id="8" name="enemy_noob" type="enemy" x="768.5" y="414.5" width="29" height="29">
+   <properties>
+    <property name="direction" value="Left"/>
+   </properties>
+  </object>
+  <object id="9" name="enemyFlyingCircle" type="enemy" x="288" y="160" width="32" height="32"/>
+  <object id="11" name="enemyFlyingCircle" type="enemy" x="705" y="160" width="32" height="32">
+   <properties>
+    <property name="angleDirection" value="-1"/>
+    <property name="radius" value="-50"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="powerUpLayer_01"/>
+</map>
