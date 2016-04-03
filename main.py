@@ -3,6 +3,7 @@ import os
 from menu.Menu import Menu
 
 from app.game import Game
+from app.menu import Menu
 from app.gameOverScene import GameOverScene
 from app.settings import *
 from app.winScene import WinScene
