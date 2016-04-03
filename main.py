@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
         #icon = pygame.transform.scale(pygame.image.load(os.path.join('img', 'player_triangle_v1.png')), (TILEDIMX, TILEDIMY))
         #pygame.display.set_icon(icon)
-        pygame.display.set_caption("A Striangle journey")
+        pygame.display.set_caption("A Striangle Journey")
     
         # Jeu
         menu = Menu(screen)

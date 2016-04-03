@@ -28,5 +28,3 @@ class Menu(ScreenGen):
         self.spritesHUD = pygame.sprite.Group()
 
         self.allSprites.add(self.maSurfaceSprite,self.titleSprite)
-
-
