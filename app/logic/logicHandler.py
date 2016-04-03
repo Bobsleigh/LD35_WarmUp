@@ -1,28 +1,28 @@
-from app.map.gamedata import GameData
+from app.map.gamedata import MapData
 from app.bullet import *
 
 class LogicHandler:
-    def __init__(self):
+    def __init__(self, gameData):
         self.sceneRunning = True
         self.endState = None
-        self.collisionChecker = CollisionPlayer()
+        self.collisionChecker = CollisionPlayer(gameData.soundController)
         self.spawmPointPlayerx = 0
         self.spawmPointPlayery = 0
         self.newMap = None
+        self.gameData = gameData
 
-    def handle(self, player,gameData, mapMemory):
-        self.applyGravity(gameData.allSprites)
-        self.applyFriction(gameData.allSprites)
-        self.handleCollision(player, gameData, mapMemory)
-        self.handleBullets(gameData, player)
-        newMap = self.handleObjectCollision(player, gameData)
-        self.gameOverCondition(player, gameData)
+    def handle(self, player, mapMemory):
+        self.applyGravity(self.gameData.allSprites)
+        self.applyFriction(self.gameData.allSprites)
+        self.handleCollision(player, self.gameData, mapMemory)
+        self.handleBullets(self.gameData, player)
+        self.handleObjectCollision(player, self.gameData)
+        self.gameOverCondition(player, self.gameData)
 
-        gameData.allSprites.update()
+        self.gameData.allSprites.update()
+        self.gameData.soundController.update()
 
-        return newMap
-
-    def handleCollision(self,player, gameData, mapMemory):
+    def handleCollision(self, player, gameData, mapMemory):
         self.collisionChecker.collisionAllSprites(player, gameData, mapMemory)
 
     def handleBottomCollision(self, sprites):
@@ -62,7 +62,7 @@ class LogicHandler:
 
                     self.spawmPointPlayerx = tuple[1]
                     self.spawmPointPlayery = tuple[2]
-                    self.newMap = GameData(nameNewMap)
+                    self.newMap = MapData(nameNewMap)
 
                 elif object.type == "finish_zone" and player.lifeMax == player.lifeMaxCap:
                     player.changeCircle()

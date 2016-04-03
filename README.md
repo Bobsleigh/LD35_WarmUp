@@ -5,6 +5,11 @@
 [Ludum Dare!](http://ludumdare.com/compo/)
 
 ![alt tag](https://github.com/Bobsleigh/LD35_WarmUp/blob/master/img/Cochon.png)
+![alt tag](https://github.com/Bobsleigh/LD35_WarmUp/blob/master/img/Cochon.png)
+![alt tag](https://github.com/Bobsleigh/LD35_WarmUp/blob/master/img/Cochon.png)
+![alt tag](https://github.com/Bobsleigh/LD35_WarmUp/blob/master/img/Cochon.png)
+![alt tag](https://github.com/Bobsleigh/LD35_WarmUp/blob/master/img/Cochon.png)
+![alt tag](https://github.com/Bobsleigh/LD35_WarmUp/blob/master/img/Cochon.png)
 
 ## Outils intéressants :
 
@@ -13,7 +18,11 @@
 
 [PyGame](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pygame)
 
-### Git! :
+[PyTMX](http://pytmx.readthedocs.org/en/latest/)
+
+[PyScroll](http://pygame.org/project-pyscroll-2892-.html)
+
+### Git :
 [Git](https://git-scm.com/)
 
 ### IDE :
@@ -23,7 +32,7 @@
 [Tiled](http://www.mapeditor.org/)
 
 ### Autres outils :
-[Liste sur LD](http://ludumdare.com/compo/tools/)
+[Liste d'outils sur LD](http://ludumdare.com/compo/tools/)
 
 
 ## Étapes pour les programmeurs :
@@ -45,8 +54,15 @@ Faire un Shift+Click droit dans python35/scripts:
 
 À noter que le nom du fichier va être "pygame-1.9.2a0-cp35-none-win_amd64.whl"
 
-### Step 4 - Installation de git
+### Step 4 - Installation de PyTMX et PyScroll
+Tout simplement faire (dans le bon répertoire)
+
+pip install pytmx
+
+pip install pyscroll
+
+### Step 5 - Installation de git
 [Git](https://git-scm.com/)
 
-### Step 5 - Installation d'un IDE (Optionnel)
+### Step 6 - Installation d'un IDE (Optionnel)
 Pycharm est très bien pour python => [disponible ici](https://www.jetbrains.com/pycharm/download/)
