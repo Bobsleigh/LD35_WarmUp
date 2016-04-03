@@ -37,7 +37,7 @@ class MapData:
                 self.allSprites.add(powerUp)
                 self.powerUpGroup.add(powerUp)
 
-        # TODO: Put camera in gameData
+        # TODO: Put camera in mapData
         self.camera = pyscroll.PyscrollGroup(map_layer=self.cameraPlayer, default_layer=SPRITE_LAYER)
         self.camera.add(self.allSprites)
 

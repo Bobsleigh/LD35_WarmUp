@@ -2,28 +2,28 @@ from app.map.gamedata import MapData
 from app.bullet import *
 
 class LogicHandler:
-    def __init__(self, gameData):
+    def __init__(self, mapData):
         self.sceneRunning = True
         self.endState = None
-        self.collisionChecker = CollisionPlayer(gameData.soundController)
+        self.collisionChecker = CollisionPlayer(mapData.soundController)
         self.spawmPointPlayerx = 0
         self.spawmPointPlayery = 0
         self.newMap = None
-        self.gameData = gameData
+        self.mapData = mapData
 
-    def handle(self, player, mapMemory):
-        self.applyGravity(self.gameData.allSprites)
-        self.applyFriction(self.gameData.allSprites)
-        self.handleCollision(player, self.gameData, mapMemory)
-        self.handleBullets(self.gameData, player)
-        self.handleObjectCollision(player, self.gameData)
-        self.gameOverCondition(player, self.gameData)
+    def handle(self, player, gameMemory):
+        self.applyGravity(self.mapData.allSprites)
+        self.applyFriction(self.mapData.allSprites)
+        self.handleCollision(player, self.mapData, gameMemory)
+        self.handleBullets(self.mapData, player)
+        self.handleObjectCollision(player, self.mapData)
+        self.gameOverCondition(player, self.mapData)
 
-        self.gameData.allSprites.update()
-        self.gameData.soundController.update()
+        self.mapData.allSprites.update()
+        self.mapData.soundController.update()
 
-    def handleCollision(self, player, gameData, mapMemory):
-        self.collisionChecker.collisionAllSprites(player, gameData, mapMemory)
+    def handleCollision(self, player, mapData, gameMemory):
+        self.collisionChecker.collisionAllSprites(player, mapData, gameMemory)
 
     def handleBottomCollision(self, sprites):
         for sprite in sprites:
@@ -80,19 +80,19 @@ class LogicHandler:
         else:
            return False
 
-    def handleBullets(self, gameData, player):
-        for bullet in gameData.friendlyBullet:
+    def handleBullets(self, mapData, player):
+        for bullet in mapData.friendlyBullet:
             if type(bullet) == Bullet:
-                collisionBulletWall(bullet, gameData)
-                collisionBulletEnemy(bullet, gameData)
-        for bullet in gameData.enemyBullet:
+                collisionBulletWall(bullet, mapData)
+                collisionBulletEnemy(bullet, mapData)
+        for bullet in mapData.enemyBullet:
             if type(bullet) == Bullet:
-                collisionBulletWall(bullet, gameData)
-        collisionBulletPlayer(gameData, player)
+                collisionBulletWall(bullet, mapData)
+        collisionBulletPlayer(mapData, player)
 
-    def gameOverCondition(self, player, gameData):
+    def gameOverCondition(self, player, mapData):
         if player.life <= 0:
-            self.gameOver(player, gameData)
+            self.gameOver(player, mapData)
 
     def gameOver(self, player, map):
         self.sceneRunning = False

@@ -5,17 +5,17 @@ class CollisionPlayer:
     def __init__(self, soundPlayerController):
         self.soundControl = soundPlayerController
 
-    def collisionAllSprites(self, player, gameData, mapMemory):
-        for sprite in gameData.allSprites:
+    def collisionAllSprites(self, player, mapData, gameMemory):
+        for sprite in mapData.allSprites:
             if sprite.isPhysicsApplied == True or sprite.isCollisionApplied == True:
-                self.rightCollision(sprite, gameData)
-                self.downCollision(sprite, gameData)
-                self.leftCollision(sprite, gameData)
-                self.upCollision(sprite, gameData)
-                self.isWallHuggingRight(sprite, gameData)
-                self.isWallHuggingLeft(sprite, gameData)
-                self.collisionWithEnemy(player, gameData.enemyGroup)
-                self.pickPowerUp(player, gameData.powerUpGroup, mapMemory)
+                self.rightCollision(sprite, mapData)
+                self.downCollision(sprite, mapData)
+                self.leftCollision(sprite, mapData)
+                self.upCollision(sprite, mapData)
+                self.isWallHuggingRight(sprite, mapData)
+                self.isWallHuggingLeft(sprite, mapData)
+                self.collisionWithEnemy(player, mapData.enemyGroup)
+                self.pickPowerUp(player, mapData.powerUpGroup, gameMemory)
 
     def collisionSolidTile(self, player, map): #Obsolete, not used
 
@@ -186,12 +186,12 @@ class CollisionPlayer:
             player.loseLife()
             self.soundControl.hurt()
 
-    def pickPowerUp(self, player, powerUpGroup, mapMemory):
+    def pickPowerUp(self, player, powerUpGroup, gameMemory):
         collisionList = pygame.sprite.spritecollide(player, powerUpGroup, False)
         for powerUp in collisionList:
             if powerUp.name == "powerUp_HealthMax":
                 player.pickedPowerUpMaxHealth()
-                mapMemory.registerPickedUpPowerUpHealth()
+                gameMemory.registerPickedUpPowerUpHealth()
                 self.soundControl.maxHealthPowerup()
             elif powerUp.name == "powerUp_Health":
                 player.pickedPowerUpHealth()

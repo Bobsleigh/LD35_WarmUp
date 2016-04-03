@@ -12,14 +12,14 @@ class EventHandlerFactory:
     def createEventHandlerMenu(self):
         return EventHandlerMenu()
 
-    def createEventHandlerGame(self, player, gameData):
+    def createEventHandlerGame(self, player, mapData):
 
-        return EventHandlerGame(player, EventHandlerPlayer(player, gameData.soundController), soundGameController(), gameData)
+        return EventHandlerGame(player, EventHandlerPlayer(player, mapData.soundController), soundGameController(), mapData)
 
     def createEventHandlerGameOverScene(self):
         return EventHandlerGameOverScene()
 
-    def create(self, screenType, camera = None, gameData=None):
+    def create(self, screenType, camera = None, mapData=None):
         from app.menu import Menu
         from app.game import Game
         from app.gameOverScene import GameOverScene
@@ -28,7 +28,7 @@ class EventHandlerFactory:
         if screenType == Menu:
             return self.createEventHandlerMenu()
         if screenType == Game:
-            return self.createEventHandlerGame(self.player, gameData)
+            return self.createEventHandlerGame(self.player, mapData)
         if screenType == GameOverScene:
             return self.createEventHandlerGameOverScene()
         if screenType == WinScene:

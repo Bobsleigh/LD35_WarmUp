@@ -1,6 +1,6 @@
 from app.map.mapTemplate import MapTemplate
 
-class MapMemory:
+class GameMemory:
     def __init__(self):
         self.visitedMaps = []
         self.visitedMaps.append(MapTemplate())
