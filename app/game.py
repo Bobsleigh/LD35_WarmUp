@@ -1,9 +1,11 @@
+import pygame
 from app.drawing.drawerGame import DrawerGame
 from app.logic.logicHandler import LogicHandler
 from app.event.eventHandlerFactory import EventHandlerFactory
 
 from menu.Menu import Menu
 
+from app.settings import *
 from app.player import Player
 from app.map.gamedata import MapData
 from app.map.mapMemory import MapMemory
