@@ -58,8 +58,8 @@ class Player(pygame.sprite.Sprite):
 
         self.shape = TRIANGLE
 
-        self.life = 1
-        self.lifeMax = 1
+        self.life = 4
+        self.lifeMax = 4
         self.lifeMaxCap = 5
         self.isInvincible = False
         self.invincibleFrameCounter = 0
