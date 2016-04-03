@@ -4,12 +4,13 @@
 
 [Ludum Dare!](http://ludumdare.com/compo/)
 
-[[https://github.com/Bobsleigh/LD35_WarmUp/img/Cochon.png|alt=RPP]]
+![alt tag](https://github.com/Bobsleigh/LD35_WarmUp/blob/master/img/Cochon.png)
 
 ## Outils intéressants :
 
 ### Python :
 [Python 3.5](https://www.python.org/ftp/python/3.5.0/python-3.5.0-amd64.exe)
+
 [PyGame](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pygame)
 
 ### IDE :
