@@ -1,15 +1,12 @@
-import pygame
 import pyscroll
 import pytmx
-import os
 
 from app.enemy.enemyFactory import EnemyFactory
 from app.powerup.powerUpFactory import PowerUpFactory
-from app.settings import *
 from app.sound.soundPlayerController import *
 from app.player import *
 
-class GameData:
+class MapData:
     def __init__(self, mapName="Map_01", screenSize=(SCREEN_WIDTH, SCREEN_HEIGHT)):
 
         self.nameMap = mapName
@@ -47,27 +44,27 @@ class GameData:
     def reqImageName(self, nameMap):
 
         if nameMap == "Map_01":
-            return os.path.join('tiles', 'Theme_v1.tmx')
+            return os.path.join('tiles', 'theme_v1.tmx')
         if nameMap == "Map_02":
-            return os.path.join('tiles', 'Theme_v2.tmx')
+            return os.path.join('tiles', 'theme_v2.tmx')
         if nameMap == "Map_03":
-            return os.path.join('tiles', 'Theme_v3.tmx')
+            return os.path.join('tiles', 'theme_v3.tmx')
         if nameMap == "Map_04":
-            return os.path.join('tiles', 'Theme_v4.tmx')
+            return os.path.join('tiles', 'theme_v4.tmx')
         if nameMap == "Map_05":
-            return os.path.join('tiles', 'Theme_v5.tmx')
+            return os.path.join('tiles', 'theme_v5.tmx')
         if nameMap == "Map_06":
-            return os.path.join('tiles', 'Theme_v6.tmx')
+            return os.path.join('tiles', 'theme_v6.tmx')
         if nameMap == "Map_07":
-            return os.path.join('tiles', 'Theme_v7.tmx')
+            return os.path.join('tiles', 'theme_v7.tmx')
         if nameMap == "Map_08":
-            return os.path.join('tiles', 'Theme_v8.tmx')
+            return os.path.join('tiles', 'theme_v8.tmx')
         if nameMap == "Map_09":
-            return os.path.join('tiles', 'Theme_v9.tmx')
+            return os.path.join('tiles', 'theme_v9.tmx')
         if nameMap == "Map_10":
-            return os.path.join('tiles', 'Theme_v10.tmx')
+            return os.path.join('tiles', 'theme_v10.tmx')
         if nameMap == "Map_11":
-            return os.path.join('tiles', 'Theme_v11.tmx')
+            return os.path.join('tiles', 'theme_v11.tmx')
 
     def reqNameAndPositionNewMap(self, out_zone, player):
 

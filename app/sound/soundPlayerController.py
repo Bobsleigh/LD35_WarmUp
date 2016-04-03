@@ -9,8 +9,11 @@ class soundPlayerController():
         self.hurtSound = pygame.mixer.Sound(os.path.join('sample', 'hit_hurt.wav'))
         self.shootSound = pygame.mixer.Sound(os.path.join('sample', 'shoot.wav'))
 
+        self.internClockMax = 100
+        self.internClockHurt = self.internClockMax
+
     def update(self):
-        pass
+        self.internClockHurt = min(self.internClockHurt+1, self.internClockMax)
 
     def jump(self):
         self.jumpSound.play()
@@ -22,7 +25,9 @@ class soundPlayerController():
         self.healthPowerupSound.play()
 
     def hurt(self):
-        self.hurtSound.play()
+        if self.internClockHurt >= 10:
+            self.hurtSound.play()
+            self.internClockHurt = 0
 
     def shoot(self):
         self.shootSound.play()

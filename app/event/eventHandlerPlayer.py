@@ -37,7 +37,7 @@ class EventHandlerPlayer():
                 if self.player.jumpState != GROUNDED:
                     if (self.player.specialWallSide == LEFT and self.player.wallJumpLeftAllowed and not self.player.jumpState == GROUNDED) or (self.player.specialWallSide == RIGHT and self.player.wallJumpRightAllowed and not self.player.jumpState == GROUNDED):
                         self.soundControllerPlayer.jump()
-                    self.player.wallJump()
+                        self.player.wallJump()
                 jumpState1 = self.player.jumpState
                 self.player.jump()
                 jumpState2 = self.player.jumpState

@@ -3,7 +3,6 @@ from app.event.eventHandlerGame import EventHandlerGame
 from app.event.eventHandlerPlayer import EventHandlerPlayer
 from app.event.eventHandlerGameOverScene import EventHandlerGameOverScene
 
-from app.sound.soundPlayerController import soundPlayerController
 from app.sound.soundGameController import soundGameController
 
 class EventHandlerFactory:
@@ -13,9 +12,9 @@ class EventHandlerFactory:
     def createEventHandlerMenu(self):
         return EventHandlerMenu()
 
-    def createEventHandlerGame(self,player, gameData):
+    def createEventHandlerGame(self, player, gameData):
 
-        return EventHandlerGame(player, EventHandlerPlayer(player, soundPlayerController()), soundGameController(), gameData)
+        return EventHandlerGame(player, EventHandlerPlayer(player, gameData.soundController), soundGameController(), gameData)
 
     def createEventHandlerGameOverScene(self):
         return EventHandlerGameOverScene()

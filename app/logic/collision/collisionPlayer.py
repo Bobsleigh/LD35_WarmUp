@@ -1,10 +1,9 @@
 from app.settings import *
 import pygame
-from app.sound.soundPlayerController import soundPlayerController
 
 class CollisionPlayer:
-    def __init__(self):
-        self.soundControl = soundPlayerController()
+    def __init__(self, soundPlayerController):
+        self.soundControl = soundPlayerController
 
     def collisionAllSprites(self, player, gameData, mapMemory):
         for sprite in gameData.allSprites:
