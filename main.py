@@ -44,4 +44,3 @@ if __name__ == '__main__':
             winScene = WinScene(screen)
             winScene.mainLoop()
             pygame.mixer.music.stop()
-
