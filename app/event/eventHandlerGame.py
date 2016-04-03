@@ -5,13 +5,13 @@ from app.settings import *
 from app.event.eventHandlerGen import *
 
 class EventHandlerGame(EventHandlerGen):
-    def __init__(self, player, eventHandlerPlayer, musicGameController, gameData):
+    def __init__(self, player, eventHandlerPlayer, musicGameController, mapData):
         super().__init__()
         self.eventHandlerPlayer = eventHandlerPlayer
         self.musicGameController = musicGameController
         self.endState = None
         self.player = player
-        self.gameData = gameData
+        self.mapData = mapData
         self.menuPause = None
 
     def handle(self):
@@ -23,9 +23,9 @@ class EventHandlerGame(EventHandlerGen):
                         bullet = Bullet(self.player.rect.x + self.player.rect.width +1, self.player.rect.centery, self.player.facingSide)
                     else:
                         bullet = Bullet(self.player.rect.x -1, self.player.rect.centery, self.player.facingSide)
-                    self.gameData.camera.add(bullet)
-                    self.gameData.allSprites.add(bullet)
-                    self.gameData.friendlyBullet.add(bullet)
+                    self.mapData.camera.add(bullet)
+                    self.mapData.allSprites.add(bullet)
+                    self.mapData.friendlyBullet.add(bullet)
                 if event.key == pygame.K_BACKSPACE:
                     self.menuPause.mainLoop()
                 if event.key == pygame.K_ESCAPE:
@@ -38,5 +38,5 @@ class EventHandlerGame(EventHandlerGen):
 
         self.eventHandlerPlayer.handle()
 
-    def newMap(self, gameData):
-        self.gameData = gameData
+    def newMap(self, mapData):
+        self.mapData = mapData
