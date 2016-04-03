@@ -6,9 +6,10 @@ class EventHandlerMenu():
     def __init__(self):
         pass
 
-    def eventHandle(self,optionList,selector):
+    def eventHandle(self,optionList,selector,close):
         self.optionList = optionList
         self.selector = selector
+        self.close = close
         for dummyEv in event.get():
             if dummyEv.type == QUIT:
                 quit()
@@ -34,5 +35,5 @@ class EventHandlerMenu():
                 elif dummyEv.key == K_RETURN:
                     self.optionList[self.selector.vPos].doOption()
                 elif dummyEv.key == K_BACKSPACE or K_ESCAPE:
-                    self.optionList[0].doOption()
+                    self.close()
 
