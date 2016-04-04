@@ -6,3 +6,7 @@ def seekAtt(objectLocal, nameAttribute):
         return getattr(objectLocal, nameAttribute)
     except AttributeError:
         return None
+
+# quit game
+def quitGame():
+    quit()

@@ -21,28 +21,6 @@ class Menu():
         self.optionList = []
         self.eventHandler = EventHandlerMenu()
 
-    def mainLoop(self):
-        self.menuRunning = True
-        while self.menuRunning:
-            self.draw()
-            self.eventHandler.eventHandle(self.optionList, self.selector,self.close)
-
-    def draw(self):
-
-        count = 0
-        while count < self.optNum:
-            option = self.optionList[count]
-
-            draw.rect(self.screen, option.color1,
-                      (option.button.left, option.button.top, option.button.width, option.button.height))
-            draw.rect(self.screen, option.color2,
-                      (option.button.left, option.button.top, option.button.width, option.button.height), 7)
-            self.screen.blit(option.name, option.textPos)
-
-            count += 1
-
-        display.flip()
-
     def addOption(self,name,method):
         self.optionList.append(Option(name,method))
         self.createMenu()
@@ -72,5 +50,3 @@ class Menu():
             option.button.top = self.y+self.menuHeight*(2*count-self.optNum)/(2*self.optNum)+spaceHeight*0.15
             option.textPos =[self.x-option.name.get_width()*0.5,self.y+self.menuHeight*(2*count-self.optNum)/(2*self.optNum)+spaceHeight*0.45-option.name.get_height()*0.5]
 
-    def close(self):
-        self.menuRunning = False
