@@ -24,3 +24,6 @@ pip-log.txt
 
 # Directory-based project format:
 .idea/
+
+# spec, pour créer le exe (pour le moment)
+main.spec
