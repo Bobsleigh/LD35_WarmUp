@@ -65,3 +65,4 @@ WIN = 2
 # Development mode, DEV or OPT
 DEV_MODE = 1
 OPT_MODE = 0
+MODE = DEV_MODE
