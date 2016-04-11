@@ -7,8 +7,10 @@ from menu.Menu import Menu
 
 from app.settings import *
 from app.player import Player
-from app.map.gamedata import MapData
+from app.map.mapData import MapData
 from app.map.gameMemory import GameMemory
+
+from app.MenuPause import MenuPause
 
 
 class Game:
@@ -24,6 +26,11 @@ class Game:
 
         # TODO: See where to put player. In mapData? But he will reset with each map change..?
         self.player = Player(540, 445)
+
+        # For debugging
+        if MODE == DEV_MODE:
+            self.player.lifeMax = 4
+            self.player.life = 4
 
         self.mapData.allSprites.add(self.player)
         self.mapData.camera.add(self.player)
@@ -41,12 +48,8 @@ class Game:
         self.endState = None
 
         #Menu
-        self.menuPause = Menu(self.screen, pygame.Rect(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3.5))
-        self.menuPause.addOption('Resume',self.menuPause.close)
-        self.menuPause.addOption('Back to Main Menu', self.backToMain)
-        self.menuPause.addOption('Exit', self.eventHandlerGame.handleQuit)
+        self.menuPause = MenuPause(screen,self.backToMain)
         self.eventHandlerGame.menuPause = self.menuPause
-
 
     def mainLoop(self):
         self.sceneRunning = True

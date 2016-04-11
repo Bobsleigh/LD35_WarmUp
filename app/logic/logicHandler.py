@@ -1,4 +1,4 @@
-from app.map.gamedata import MapData
+from app.map.mapData import MapData
 from app.bullet import *
 
 class LogicHandler:

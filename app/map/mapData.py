@@ -1,6 +1,6 @@
 import pyscroll
 import pytmx
-import sys #TODO: REMOVE - DEBUG ONLY
+
 from app.enemy.enemyFactory import EnemyFactory
 from app.powerup.powerUpFactory import PowerUpFactory
 from app.sound.soundPlayerController import *
@@ -41,30 +41,12 @@ class MapData:
         self.camera = pyscroll.PyscrollGroup(map_layer=self.cameraPlayer, default_layer=SPRITE_LAYER)
         self.camera.add(self.allSprites)
 
+    # Map names are "Map_XX" where XX is the number 01 to 99
+    # Tiled names are "theme_vX.tmx" where X is the number 1 to 99
     def reqImageName(self, nameMap):
 
-        if nameMap == "Map_01":
-            return os.path.join('tiles', 'theme_v1.tmx')
-        if nameMap == "Map_02":
-            return os.path.join('tiles', 'theme_v2.tmx')
-        if nameMap == "Map_03":
-            return os.path.join('tiles', 'theme_v3.tmx')
-        if nameMap == "Map_04":
-            return os.path.join('tiles', 'theme_v4.tmx')
-        if nameMap == "Map_05":
-            return os.path.join('tiles', 'theme_v5.tmx')
-        if nameMap == "Map_06":
-            return os.path.join('tiles', 'theme_v6.tmx')
-        if nameMap == "Map_07":
-            return os.path.join('tiles', 'theme_v7.tmx')
-        if nameMap == "Map_08":
-            return os.path.join('tiles', 'theme_v8.tmx')
-        if nameMap == "Map_09":
-            return os.path.join('tiles', 'theme_v9.tmx')
-        if nameMap == "Map_10":
-            return os.path.join('tiles', 'theme_v10.tmx')
-        if nameMap == "Map_11":
-            return os.path.join('tiles', 'theme_v11.tmx')
+        numberOfTheMap = int((re.findall("\d+", nameMap))[0])
+        return os.path.join('tiles', "theme_v" + str(numberOfTheMap) + ".tmx")
 
     def reqNameAndPositionNewMap(self, out_zone, player):
 
