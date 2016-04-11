@@ -1,5 +1,6 @@
 import pyscroll
 import pytmx
+import re
 
 from app.enemy.enemyFactory import EnemyFactory
 from app.powerup.powerUpFactory import PowerUpFactory
