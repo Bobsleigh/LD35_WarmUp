@@ -3,6 +3,7 @@ from pygame import init,display,Rect,mixer,time,font
 
 from menu.Menu import Menu
 from app.game import Game
+from sys import exit
 
 from app.settings import *
 
@@ -16,7 +17,7 @@ class TitleScreen():
         menu.addOption('Start', game.mainLoop)
         menu.addOption('Option', menuOption.mainLoop)
         menu.addOption('Credit', game.mainLoop)
-        menu.addOption('Exit', quit)
+        menu.addOption('Exit', exit)
 
         menuOption.addOption('Back', menuOption.close)
 

@@ -1,5 +1,7 @@
 import pygame
 import os
+from sys import exit
+import sys #TODO: REMOVE DEBUG ONLY
 from menu.Menu import Menu
 
 from app.game import Game
@@ -13,9 +15,15 @@ def startGame():
     game.mainLoop()
 
 if __name__ == '__main__':
+
     running = True
     while running:
     # Init
+        if getattr(sys, 'frozen', False):
+            #os.chdir(os.path.dirname(sys.executable))
+            os.chdir(sys._MEIPASS)
+
+
         pygame.mixer.pre_init(44100, -16, 2, 2048)
         pygame.init()
         pygame.font.init()
@@ -35,7 +43,7 @@ if __name__ == '__main__':
         screen.blit(titleMenu, (0,0))
         menu = Menu(screen, pygame.Rect(SCREEN_WIDTH / 2, SCREEN_HEIGHT * 13 / 16, SCREEN_WIDTH / 3, SCREEN_HEIGHT * 0.25))
         menu.addOption('Start', menu.close)
-        menu.addOption('Exit', quit)
+        menu.addOption('Exit', exit)
 
         menu.mainLoop()
 
