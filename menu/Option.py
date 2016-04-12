@@ -44,22 +44,12 @@ class Option(pygame.sprite.Sprite):
     def select(self):
         self.isSelected = True
         self.soundChange.play(0)
-        self.setOptionStyle()
 
     def deselect(self):
         self.isSelected = False
-        self.setOptionStyle()
 
     def doOption(self):
         self.soundSelect.play(0)
         self.method()
-
-    def setOptionStyle(self):
-        if self.isSelected:
-            self.color1 = COLOR_MENU_SELECT_1
-            self.color2 = COLOR_MENU_SELECT_2
-        else:
-            self.color1 = COLOR_MENU_1
-            self.color2 = COLOR_MENU_2
 
 

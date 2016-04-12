@@ -31,7 +31,6 @@ class Menu():
 
         # Default select opt. 1
         self.optionList[0].isSelected = True
-        self.optionList[0].setOptionStyle()
 
         # Mecanics.
         self.optNum = len(self.optionList)
