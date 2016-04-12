@@ -4,6 +4,7 @@ from app.screenGen import ScreenGen
 
 from menu.Menu import Menu
 from app.game import Game
+from sys import exit
 
 import os
 from app.settings import *

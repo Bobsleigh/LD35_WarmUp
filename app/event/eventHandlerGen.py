@@ -1,4 +1,5 @@
 import pygame
+from sys import exit
 
 class EventHandlerGen():
     def __init__(self):
@@ -12,7 +13,7 @@ class EventHandlerGen():
                 self.handleQuit()
 
     def handleQuit(self):
-        quit()
+        exit()
 
     def handleKeydown(self, key):
         if key == pygame.K_SPACE:

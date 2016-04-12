@@ -1,4 +1,4 @@
-
+from sys import exit
 
 # seek the attribute name in object, if none, pass
 def seekAtt(objectLocal, nameAttribute):
@@ -9,4 +9,4 @@ def seekAtt(objectLocal, nameAttribute):
 
 # quit game
 def quitGame():
-    quit()
+    exit()

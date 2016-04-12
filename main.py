@@ -1,6 +1,7 @@
 import pygame
 import os
 from menu.Menu import Menu
+import sys
 
 from app.game import Game
 from menu.Menu import Menu
@@ -10,11 +11,17 @@ from app.winScene import WinScene
 
 from app.TitleScreen import TitleScreen
 
+
+
 def startGame():
-    menu.close()
+    menu.close() #TODO: Define menu and game in this function.
     game.mainLoop()
 
 if __name__ == '__main__':
+    #Code to check if the code is running from a PyInstaller --onefile .exe
+    if getattr(sys, 'frozen', False):
+        os.chdir(sys._MEIPASS)
+
     running = True
     while running:
     # Init
