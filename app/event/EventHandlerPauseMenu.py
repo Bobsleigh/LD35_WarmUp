@@ -1,6 +1,7 @@
 from pygame import event,QUIT,KEYDOWN,K_ESCAPE,K_RIGHT,K_LEFT,K_UP,K_DOWN,K_SPACE,K_RETURN,K_BACKSPACE,KEYUP
 
 from app.settings import *
+from sys import exit
 
 class EventHandlerPauseMenu():
     def __init__(self):
@@ -12,7 +13,7 @@ class EventHandlerPauseMenu():
         self.close = close
         for dummyEv in event.get():
             if dummyEv.type == QUIT:
-                quit()
+                exit()
             elif dummyEv.type == KEYDOWN:
                 if dummyEv.key == K_UP:
                     self.optionList[self.selector.vPos].deselect()

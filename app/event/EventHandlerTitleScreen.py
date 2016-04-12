@@ -1,5 +1,5 @@
 from pygame import event,QUIT,KEYDOWN,K_ESCAPE,K_RIGHT,K_LEFT,K_UP,K_DOWN,K_SPACE,K_RETURN,K_BACKSPACE,KEYUP
-
+from sys import exit
 from app.settings import *
 
 class EventHandlerTitleScreen():
@@ -11,7 +11,7 @@ class EventHandlerTitleScreen():
         self.selector = selector
         for dummyEv in event.get():
             if dummyEv.type == QUIT:
-                quit()
+                exit()
             elif dummyEv.type == KEYDOWN:
                 if dummyEv.key == K_RIGHT:
                     self.optionList[self.selector.vPos].deselect()
