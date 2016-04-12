@@ -21,7 +21,7 @@ class TitleScreen():
         self.screen.blit(titleMenu, (0,0))
 
         #Define MainMenu
-        self.menu = Menu(screen, pygame.Rect(SCREEN_WIDTH / 2, SCREEN_HEIGHT * 13 / 16, SCREEN_WIDTH / 3, SCREEN_HEIGHT * 0.25))
+        self.menu = Menu(pygame.Rect(SCREEN_WIDTH / 2, SCREEN_HEIGHT * 13 / 16, SCREEN_WIDTH / 3, SCREEN_HEIGHT * 0.25))
         self.menu.addOption('Start', self.close)
         self.menu.addOption('Exit', quitGame)
 
@@ -30,23 +30,17 @@ class TitleScreen():
     def mainLoop(self):
         self.menuRunning = True
         while self.menuRunning:
-            self.draw()
             self.eventHandler.eventHandle(self.menu.optionList, self.menu.selector)
+            self.menu.spritesMenu.update() #Ce serait la logique.
+            self.draw()
+
 
     def draw(self):
         self.optionList = self.menu.optionList
 
-        count = 0
-        while count < self.menu.optNum:
-            option = self.optionList[count]
+        for option in self.optionList:
 
-            pygame.draw.rect(self.screen, option.color1,
-                      (option.button.left, option.button.top, option.button.width, option.button.height))
-            pygame.draw.rect(self.screen, option.color2,
-                      (option.button.left, option.button.top, option.button.width, option.button.height), 7)
-            self.screen.blit(option.name, option.textPos)
-
-            count += 1
+            self.menu.spritesMenu.draw(self.screen)
 
         pygame.display.flip()
 

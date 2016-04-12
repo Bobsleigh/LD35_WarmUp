@@ -15,8 +15,8 @@ class MenuPause():
         self.screen = screen
 
         # Menu
-        self.menuPause = Menu(self.screen,
-                              pygame.Rect(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3.5))
+        self.menuPause = Menu(
+                              pygame.Rect(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3))
         self.menuPause.addOption('Resume', self.close)
         self.menuPause.addOption('Back to Main Menu', backToMain)
         self.menuPause.addOption('Exit', quitGame)
@@ -28,22 +28,12 @@ class MenuPause():
         self.menuRunning = True
         while self.menuRunning:
             self.draw()
+            self.menuPause.spritesMenu.update() #Ce serait la logique.
             self.eventHandler.eventHandle(self.menuPause.optionList, self.menuPause.selector, self.close)
 
     def draw(self):
         self.optionList = self.menuPause.optionList
-
-        count = 0
-        while count < self.menuPause.optNum:
-            option = self.optionList[count]
-
-            pygame.draw.rect(self.screen, option.color1,
-                      (option.button.left, option.button.top, option.button.width, option.button.height))
-            pygame.draw.rect(self.screen, option.color2,
-                      (option.button.left, option.button.top, option.button.width, option.button.height), 7)
-            self.screen.blit(option.name, option.textPos)
-
-            count += 1
+        self.menuPause.spritesMenu.draw(self.screen)
 
         pygame.display.flip()
 

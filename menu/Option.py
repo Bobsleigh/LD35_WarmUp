@@ -10,7 +10,15 @@ class Option(pygame.sprite.Sprite):
 
         self.optFont = pygame.font.SysFont('arial', 30)
         self.name = self.optFont.render(name, True, (0, 0, 0))
+        self.textPos = [0,0] #Par rapport au bouton
+
+        self.image = pygame.Surface([1, 1])
+        self.rect = self.image.get_rect()
+        self.rect.x = 0
+        self.rect.y = 0
+
         self.button = pygame.Rect(0,0,0,0)
+
         self.isSelected = False
         self.method = method
         self.soundSelect = pygame.mixer.Sound('menu/sound/menu_select.wav')
@@ -21,7 +29,17 @@ class Option(pygame.sprite.Sprite):
         self.color2 = COLOR_MENU_2
 
     def update(self):
-        pass
+        if self.isSelected:
+            self.color1 = COLOR_MENU_SELECT_1
+            self.color2 = COLOR_MENU_SELECT_2
+        else:
+            self.color1 = COLOR_MENU_1
+            self.color2 = COLOR_MENU_2
+
+        self.image.fill(self.color2)
+        self.image.fill(self.color1,self.button)
+        self.image.blit(self.name,self.textPos)
+
 
     def select(self):
         self.isSelected = True
