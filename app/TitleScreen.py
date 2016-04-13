@@ -23,6 +23,8 @@ class TitleScreen():
 
         self.eventHandler = EventHandlerTitleScreen()
 
+        self.nextScene = None
+
     def mainLoop(self):
         self.menuRunning = True
         while self.menuRunning:
@@ -39,4 +41,5 @@ class TitleScreen():
 
 
     def close(self):
+        self.nextScene = GAME
         self.menuRunning = False

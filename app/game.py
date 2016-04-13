@@ -40,7 +40,7 @@ class Game:
         self.logicHandler = LogicHandler(self.mapData)
         self.drawer = DrawerGame()
 
-        self.endState = None
+        self.nextScene = None
 
         #Menu
         self.menuPause = MenuPause(screen,self.backToMain)
@@ -57,7 +57,7 @@ class Game:
 
             self.drawer.draw(self.screen, self.mapData.camera, self.mapData.spritesHUD, self.player)
 
-        self.endState = self.logicHandler.endState
+        self.nextScene = self.logicHandler.endState
 
 
     def checkNewMap(self, newMap):

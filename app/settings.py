@@ -58,9 +58,11 @@ DOWN = 1
 LEFT = 2
 RIGHT = 3
 
-#End States of Game
+#Scenes self.nextScene commands, used to tell SceneHandler what next scene to run after this one ends
+GAME = 0
 GAME_OVER = 1
 WIN = 2
+
 
 # Development mode, DEV or OPT
 DEV_MODE = 1

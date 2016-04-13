@@ -8,3 +8,4 @@ class EventHandlerGameOverScene(EventHandlerGen):
     def handleKeydown(self, key):
         if key == pygame.K_SPACE:
             self.sceneRunning = False
+            pygame.mixer.music.stop()

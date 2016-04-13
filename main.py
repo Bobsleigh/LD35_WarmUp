@@ -6,6 +6,7 @@ from app.game import Game
 from app.gameOverScene import GameOverScene
 from app.settings import *
 from app.winScene import WinScene
+from app.sceneHandler import SceneHandler
 
 from app.TitleScreen import TitleScreen
 
@@ -35,19 +36,7 @@ if __name__ == '__main__':
         #pygame.display.set_icon(icon)
         pygame.display.set_caption("A Striangle journey")
 
-        game = Game(screen)
-
-        #Menu
         titleScreen = TitleScreen(screen)
-        titleScreen.mainLoop()
 
-        game.mainLoop()
-
-        if game.endState == GAME_OVER:
-            gameOverScene = GameOverScene(screen)
-            gameOverScene.mainLoop()
-            pygame.mixer.music.stop()
-        elif game.endState == WIN:
-            winScene = WinScene(screen)
-            winScene.mainLoop()
-            pygame.mixer.music.stop()
+        sceneHandler = SceneHandler(screen, titleScreen)
+        sceneHandler.mainLoop()
