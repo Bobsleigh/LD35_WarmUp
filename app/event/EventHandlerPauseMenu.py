@@ -1,6 +1,6 @@
-from pygame import event,QUIT,KEYDOWN,K_ESCAPE,K_RIGHT,K_LEFT,K_UP,K_DOWN,K_SPACE,K_RETURN,K_BACKSPACE,KEYUP
+#Impors form Pygame are diffrent here, care. Let's leave it to that for now...
+from pygame import event,QUIT,KEYDOWN,K_ESCAPE,K_UP,K_DOWN,K_SPACE,K_RETURN,K_BACKSPACE
 
-from app.settings import *
 from sys import exit
 
 class EventHandlerPauseMenu():

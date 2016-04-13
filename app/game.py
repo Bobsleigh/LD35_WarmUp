@@ -1,16 +1,11 @@
-import pygame
-from app.drawing.drawerGame import DrawerGame
-from app.logic.logicHandler import LogicHandler
-from app.event.eventHandlerFactory import EventHandlerFactory
-
-from menu.Menu import Menu
-
-from app.settings import *
-from app.player import Player
-from app.map.mapData import MapData
-from app.map.gameMemory import GameMemory
-
 from app.MenuPause import MenuPause
+from app.drawing.drawerGame import DrawerGame
+from app.event.eventHandlerFactory import EventHandlerFactory
+from app.logic.logicHandler import LogicHandler
+from app.map.gameMemory import GameMemory
+from app.map.mapData import MapData
+from app.player import Player
+from app.settings import *
 
 
 class Game:

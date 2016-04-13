@@ -1,9 +1,7 @@
 import pygame
+from app.menu.Option import Option
+from app.menu.Selector import Selector
 
-from menu.Option import *
-from menu.EventHandlerMenu import *
-from menu.Selector import *
-from app.settings import *
 
 class Menu():
     def __init__(self,dimension):
@@ -18,7 +16,6 @@ class Menu():
 
         # Menu list
         self.optionList = []
-        self.eventHandler = EventHandlerMenu()
 
         #All sprite
         self.spritesMenu = pygame.sprite.Group()

@@ -1,12 +1,9 @@
 #Imports
 import pygame
 
-from menu.Menu import Menu
-
 from app.event.EventHandlerPauseMenu import EventHandlerPauseMenu
-
+from app.menu.Menu import Menu
 from app.settings import *
-
 from app.tools.functionTools import quitGame
 
 class MenuPause():
@@ -27,12 +24,11 @@ class MenuPause():
     def mainLoop(self):
         self.menuRunning = True
         while self.menuRunning:
-            self.draw()
-            self.menuPause.spritesMenu.update() #Ce serait la logique.
             self.eventHandler.eventHandle(self.menuPause.optionList, self.menuPause.selector, self.close)
+            self.menuPause.spritesMenu.update()  # This would be in the logic
+            self.draw()  # Drawer in THIS file, below
 
     def draw(self):
-        self.optionList = self.menuPause.optionList
         self.menuPause.spritesMenu.draw(self.screen)
 
         pygame.display.flip()

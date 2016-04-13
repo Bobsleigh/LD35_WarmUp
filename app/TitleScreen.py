@@ -1,16 +1,11 @@
 #Imports
-import pygame
-from app.screenGen import ScreenGen
-
-from menu.Menu import Menu
-from app.game import Game
-from sys import exit
-
 import os
-from app.settings import *
+
+import pygame
 
 from app.event.EventHandlerTitleScreen import EventHandlerTitleScreen
-
+from app.menu.Menu import Menu
+from app.settings import *
 from app.tools.functionTools import quitGame
 
 class TitleScreen():
@@ -32,16 +27,13 @@ class TitleScreen():
         self.menuRunning = True
         while self.menuRunning:
             self.eventHandler.eventHandle(self.menu.optionList, self.menu.selector)
-            self.menu.spritesMenu.update() #Ce serait la logique.
-            self.draw()
+            self.menu.spritesMenu.update() #This would be in the logic
+            self.draw() #Drawer in THIS file, below
 
 
     def draw(self):
-        self.optionList = self.menu.optionList
 
-        for option in self.optionList:
-
-            self.menu.spritesMenu.draw(self.screen)
+        self.menu.spritesMenu.draw(self.screen)
 
         pygame.display.flip()
 

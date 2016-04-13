@@ -1,10 +1,8 @@
 import pygame
 import os
-from menu.Menu import Menu
 import sys
 
 from app.game import Game
-from menu.Menu import Menu
 from app.gameOverScene import GameOverScene
 from app.settings import *
 from app.winScene import WinScene

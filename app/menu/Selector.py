@@ -1,5 +1,4 @@
-#Imports
-from pygame import mixer
+
 
 #Objets
 class Selector():

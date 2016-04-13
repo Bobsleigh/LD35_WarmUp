@@ -13,11 +13,11 @@ class EventHandlerTitleScreen():
             if dummyEv.type == QUIT:
                 exit()
             elif dummyEv.type == KEYDOWN:
-                if dummyEv.key == K_RIGHT:
+                if dummyEv.key == K_RIGHT: #Does nothing for now...
                     self.optionList[self.selector.vPos].deselect()
                     self.selector.moveRight()
                     self.optionList[self.selector.vPos].select()
-                elif dummyEv.key == K_LEFT:
+                elif dummyEv.key == K_LEFT: #Does nothing for now...
                     self.optionList[self.selector.vPos].deselect()
                     self.selector.moveLeft()
                     self.optionList[self.selector.vPos].select()
