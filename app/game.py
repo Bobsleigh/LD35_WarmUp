@@ -49,6 +49,7 @@ class Game:
     def mainLoop(self):
         self.sceneRunning = True
         while self.sceneRunning:
+            self.sceneRunning = self.eventHandlerGame.sceneRunning and self.logicHandler.sceneRunning
             self.eventHandlerGame.handle()
             self.sceneRunning = self.eventHandlerGame.sceneRunning and self.logicHandler.sceneRunning
 
@@ -57,7 +58,8 @@ class Game:
 
             self.drawer.draw(self.screen, self.mapData.camera, self.mapData.spritesHUD, self.player)
 
-        self.nextScene = self.logicHandler.endState
+        if self.nextScene == None:
+            self.nextScene = self.logicHandler.endState
 
 
     def checkNewMap(self, newMap):
