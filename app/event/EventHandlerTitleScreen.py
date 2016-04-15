@@ -1,6 +1,5 @@
-from pygame import event,QUIT,KEYDOWN,K_ESCAPE,K_RIGHT,K_LEFT,K_UP,K_DOWN,K_SPACE,K_RETURN,K_BACKSPACE,KEYUP
+from pygame import event,QUIT,KEYDOWN,K_RIGHT,K_LEFT,K_UP,K_DOWN,K_SPACE,K_RETURN
 from sys import exit
-from app.settings import *
 
 class EventHandlerTitleScreen():
     def __init__(self):
