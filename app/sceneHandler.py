@@ -4,6 +4,8 @@ from app.settings import *
 from app.game import Game
 from app.gameOverScene import GameOverScene
 from app.winScene import WinScene
+from app.TitleScreen import TitleScreen
+
 
 class SceneHandler():
     def __init__(self, screen, firstScene):
@@ -28,3 +30,7 @@ class SceneHandler():
                 self.runningScene = WinScene(self.screen)
                 self.handlerRunning = False
                 self.runningScene.mainLoop()
+            elif self.runningScene.nextScene == TITLE_SCREEN:
+                self.runningScene = TitleScreen(self.screen)
+                self.runningScene.mainLoop()
+

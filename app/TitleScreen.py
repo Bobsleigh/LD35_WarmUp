@@ -18,7 +18,7 @@ class TitleScreen():
 
         #Define MainMenu
         self.menu = Menu(pygame.Rect(SCREEN_WIDTH / 2, SCREEN_HEIGHT * 13 / 16, SCREEN_WIDTH / 3, SCREEN_HEIGHT * 0.25))
-        self.menu.addOption('Start', self.close)
+        self.menu.addOption('Start', self.startGame)
         self.menu.addOption('Exit', quitGame)
 
         self.eventHandler = EventHandlerTitleScreen()
@@ -40,6 +40,6 @@ class TitleScreen():
         pygame.display.flip()
 
 
-    def close(self):
+    def startGame(self):
         self.nextScene = GAME
         self.menuRunning = False

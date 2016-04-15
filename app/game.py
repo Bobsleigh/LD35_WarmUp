@@ -84,8 +84,9 @@ class Game:
             self.logicHandler.newMap = None
 
     def close(self):
-        self.eventHandlerGame.sceneRunning = False
+        self.eventHandlerGame.sceneRunning = False #To stop game running
 
     def backToMain(self):
+        self.nextScene = TITLE_SCREEN
         self.menuPause.close()
         self.close()

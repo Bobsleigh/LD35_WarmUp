@@ -62,6 +62,7 @@ RIGHT = 3
 GAME = 0
 GAME_OVER = 1
 WIN = 2
+TITLE_SCREEN = 3
 
 
 # Development mode, DEV or OPT
